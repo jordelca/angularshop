@@ -1,0 +1,12 @@
+<div class="card product col-md-12">
+    <div class="cardContent col-md-12">
+        <h2 class="col-md-7 text-left">{{i.name}}</h2>
+        <div class="col-md-5 price text-right">{{i.price | currency:currencySymbol}}</div>
+        <p class="description col-md-9">{{i.description}}</p>
+        <img class="col-md-12" src="src/img/nexus-4.png" onerror="this.src='src/img/photo_default.png'">
+
+    </div>
+
+    <button class="col-md-11 btn btn-default addToCart" ng-click="addItemToCart(i);">Add to cart</button>
+
+</div>

@@ -1,0 +1,109 @@
+body {
+    padding-top: 70px;
+}
+.header {
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif !important;
+}
+
+.content{
+    margin-bottom: 50px !important;
+}
+
+.logo {
+    color: #FF6983 !important;
+}
+.subtitle {
+    color: #802268 !important;
+}
+.navbar-brand {
+    padding: 5px 15px !important;
+    min-width: 150px !important;
+}
+.newItemForm {
+    margin: 20px 0px;
+}
+.newItemForm * input {
+    margin: 20px 0px;
+}
+.search-field, .cart-container {
+    margin-top: 20px;
+    padding-right: 15px;
+}
+.card {
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px #aaa;
+    background: white;
+    border-radius: 3px;
+}
+.product-container {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+.product-wrapper {
+    padding: 5px 5px !important;
+}
+.card.product {
+    min-height: 280px !important;
+}
+.card.cart-container {
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 280px;
+}
+.card h2 {
+	float: left;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 0px;
+}
+.card p {
+    margin: 0px;
+    padding: 0px;
+}
+.card img {
+    width: 100%;
+}
+.card div.price {
+	float: right;
+    padding: 0px;
+    font-size: 18px;
+}
+.card p.description {
+    padding: 10px 0px;
+    clear: both;
+}
+.card div.cardContent {
+    padding: 0px 0px 40px 0px;
+}
+.addToCart, .checkout, .resetCart, .closeConfirmation {
+    position: absolute !important;
+    bottom: 15px !important;
+}
+.addToCart {
+    bottom: 15px !important;
+    left: 0px !important;
+    margin: 0px 10px;
+}
+.cartTable {
+    margin-bottom: 90px !important;
+}
+.resetCart {
+    right: 15px;
+}
+.cart-icon {
+    position: absolute !important;
+    right: 0px !important;
+    top: 25px !important;
+}
+.btn-default {
+    color: #fff !important;
+    background-color: #802268 !important;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    background-color: #B12B8F !important;
+}
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}

@@ -1,0 +1,46 @@
+<div class="cart-container card col-md-3">
+    <h4>Shopping Cart</h4>
+    <i class="col-md-3 cart-icon glyphicon glyphicon-shopping-cart"></i>
+    <div ng-hide="confirmation">
+        <p ng-hide="cartService.getList().length">
+            There are no products in your shopping cart yet.
+        </p>
+
+        <div ng-show="cartService.getList().length" class="cartTable table-responsive">
+            <table class="table">
+                <tbody>
+
+                    <tr>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Amount</td>
+                        <td></td>
+                    </tr>
+
+
+                    <tr ng-repeat="i in cartService.getList()">
+
+                        <td>{{i.name}}</td>
+                        <td>{{i.price | currency:currencySymbol}}</td>
+                        <td>{{i.amount}}</td>
+
+                        <td><i class="glyphicon glyphicon-remove" ng-click="cartService.removeItemFromCart(i)"> </i> 
+                        </td>
+
+                    </tr>
+                    <tr><td colspan="4"> <div class="col-md-12">Total: {{cartService.calculateTotalPrice() | currency:currencySymbol}}</div></td></tr>
+                </tbody>
+            </table>
+           
+            <button class="btn btn-default checkout" ng-click="checkOut()">Purchase</button>
+            <button class="btn btn-default resetCart" ng-click="cartService.resetCart()">Reset Cart</button>
+        </div>
+    </div>
+    <div ng-show="confirmation">
+        <div>
+            <p>Your purchase was successful.</p>
+            <button class="btn btn-default closeConfirmation" ng-click="confirmation=false">Close</button>
+        </div>
+    </div>
+
+</div>

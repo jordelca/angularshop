@@ -1,0 +1,80 @@
+<!-- Admin view -->
+<div class="col-md-12">
+    <h4>Welcome Administrator</h4>
+
+
+    <form name="newItemForm" class="newItemForm form-inline">
+        <fieldset class="form-group">
+            <input type="text" class="form-control" ng-model="item.name" placeholder="Name" required/>
+            <input type="text" class="form-control" ng-model="item.description" placeholder="Description" required/>
+            <input type="number" min="0" class="form-control" ng-model="item.price" placeholder="Price" required/>
+            <input type="number" min="0" class="form-control" ng-model="item.sold" placeholder="Sold" required/>
+
+            <button class="btn btn-default" ng-click="createItem(item)" ng-disabled="newItemForm.$invalid">Add new item</button>
+        </fieldset>
+
+    </form>
+
+    <p ng-hide="itemList.length">
+        There are no products yet.
+    </p>
+
+    <div ng-show="itemList.length" class="table-responsive">
+        <table class="table">
+            <tbody>
+
+                <tr class="tableHeader">
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Price</td>
+                    <td>Sold</td>
+                    <td>Actions</td>
+                </tr>
+
+
+                <tr ng-repeat="i in itemList">
+
+                    <td ng-hide="editing == i.id">{{i.name}}</td>
+                    <td ng-hide="editing == i.id">{{i.description}}</td>
+                    <td ng-hide="editing == i.id">{{i.price | currency:currencySymbol }}</td>
+                    <td ng-hide="editing == i.id">{{i.sold}}</td>
+                    <td ng-hide="editing == i.id">
+                        <button class="btn btn-default" ng-click="startEditing(i)"><i class="glyphicon glyphicon-edit"> </i>
+                        </button>
+                        <button class="btn btn-default" ng-click="itemService.deleteItem(i)"><i class="glyphicon glyphicon-remove"> </i>
+                        </button>
+                    </td>
+
+
+
+                    <form name="updateItemForm" novalidate class="form-inline">
+                        <td ng-if="editing == i.id">
+                            <input type="text" class="form-control col-md-2" ng-model="i.name" placeholder="Name" required/>
+                        </td>
+                        <td ng-if="editing == i.id">
+                            <input type="text" class="form-control col-md-2" ng-model="i.description" placeholder="Description" required/>
+                        </td>
+                        <td ng-if="editing == i.id">
+                            <input type="number" min="0" class="form-control col-md-2" ng-model="i.price" placeholder="Price" required/>
+                        </td>
+                        <td ng-if="editing == i.id">
+                            <input type="number" min="0" class="form-control col-md-2" ng-model="i.sold" placeholder="Sold" required/>
+                        </td>
+                        <td ng-if="editing == i.id">
+                            <button class="btn btn-default" ng-click="updateItem(i)" ng-disabled="updateItemForm.$invalid"><i class="glyphicon glyphicon-floppy-saved"> </i>
+                            </button>
+                        </td>
+
+
+
+                    </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </table>
+
+
+</div>
+<!-- End Admin view -->
